@@ -37,7 +37,8 @@ const UsuarioSchema = Schema ({
 
 // Quitamos de la respuesta la __v y el pass, para no devolver esa informacion en el response y retornamos el ...usuario.
 UsuarioSchema.methods.toJSON = function() {
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id;
     return usuario;
 }
 
