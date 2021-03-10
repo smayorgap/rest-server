@@ -22,6 +22,7 @@ const UsuarioSchema = Schema ({
     },
     rol: {
         type: String,
+        default: 'USER_ROL',
         required: [true, 'El nombre es obligatorio']
     },
     estado: {
